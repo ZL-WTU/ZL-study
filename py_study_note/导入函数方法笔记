@@ -1,21 +1,21 @@
 '''从模块导入函数的语法'''''
-导入模块#导入整个模块
-    module_name.function_name（）#调用导入的模块中的具体函数
+import module #导入整个模块
+    module_name.function_name()#调用导入的模块中的具体函数
 
 #导入特定的函数
-'''直接使用函数名字调用即可)'''
-从module_name导入function_name
+'''直接使用函数名字调用即可）'''
+from module_name import function_name
     #导入多个特定函数
-        从module_name进口function_name1，function_name2，function_name3
+        from module_name import function_name1,function_name2,function_name3
 
 #使用as给函数指定别名
 '''注意要在导入时使用'''
-从模块导入function_name为 XXX
+from module import function_name as XXX
 
 #使用as给模块指定别名
 '''在导入时使用'''
-将模块导入为 XXX
+import module as XXX
 
 #导入模块中的所有函数
-'''使用"*"'''
-从模块导入 *
+'''使用“*”'''
+from module import *
