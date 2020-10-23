@@ -12,7 +12,7 @@ my_dog=Dog("wangwang",6)
 your_dog=Dog("hanhan",5)
 print("My dog's name is "+my_dog.name)
 print("My dog's age is "+str(my_dog.age))
-my_dog.sit()                      #实例名称.方法调用类中定义的方法
+my_dog.sit()                      #实例名称.方法    调用类中定义的方法
 print("Your dog's name is "+your_dog.name)
 print("Your dog's age is "+str(your_dog.age))
 your_dog.roll_over()
