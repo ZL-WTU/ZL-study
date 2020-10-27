@@ -24,7 +24,10 @@ def greet_user():
     filename = 'username.json'
     username = get_stored_username()
     if username:
-        print("welcome come bcak " + username)
-    else:
-        username = get_new_uesename()
-        print('We will remember you when you come back,' + username)
+        answer=input('Are you '+username+' ? yes/no\n')
+        if answer=='yes':
+            print("welcome come bcak " + username)
+        else:
+            username = get_new_uesename()
+            print('We will remember you when you come back,' + username)
+greet_user()
