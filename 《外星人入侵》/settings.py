@@ -8,4 +8,11 @@ class Settings():
         self.bg_color=(230,230,230)
 
         #飞船的设置
-        self.ship_speed_factor=1.5          #但rect的centerx等属性只能存储整数
+        self.ship_speed_factor = 1.5          #但rect的centerx等属性只能存储整数
+
+        #子弹设置
+        self.bullet_speed_factor = 1
+        self.bullet_width = 3
+        self.bullet_height = 15
+        self.bullet_color = 60,60,60  #深灰色
+        self.bullets_allowed=3
