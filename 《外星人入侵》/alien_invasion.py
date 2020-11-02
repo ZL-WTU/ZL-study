@@ -1,28 +1,29 @@
-import sys                  #sys模块用于退出游戏
 import pygame               #pygame包含开发游戏需要的功能
 from settings import Settings
 from ship import Ship
+import game_functions as gf
 
 def run_game():
     #初始化游戏并创建一个屏幕对象
     pygame.init()
-    ai_setting=Settings()
-    screen=pygame.display.set_mode((ai_setting.screen_width,ai_setting.screen_height))
+    ai_settings=Settings()
+    screen=pygame.display.set_mode((ai_settings.screen_width,ai_settings.screen_height))
     pygame.display.set_caption('Alien Invasion')
+
     #创建一艘飞船
-    ship=Ship(screen)
+    ship=Ship(ai_settings,screen)
 
     #开始游戏主循环
     while True:
         #监听鼠标和键盘事件
-        for event in pygame.event.get():
-            if event.type==pygame.QUIT:
-                sys.exit()
+        gf.check_events(ship)
 
-        #每次循环都重绘屏幕
-        screen.fill(ai_setting.bg_color)
-        ship.blitme()
+        # 控制飞船移动
+        ship.update()
 
-        #让最近绘制的屏幕可见
-        pygame.display.flip()
+        #更新屏幕上的图像，并切换到新屏幕
+        gf.update_screen(ai_settings,screen,ship)
+
+
+
 run_game()
