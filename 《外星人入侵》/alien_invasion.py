@@ -4,6 +4,7 @@ from ship import Ship
 import game_functions as gf
 from pygame.sprite import Group         #编组类似于列表，但提供了有助于开发游戏的额外功能
 
+
 def run_game():
     #初始化游戏并创建一个屏幕对象
     pygame.init()
@@ -13,8 +14,15 @@ def run_game():
 
     #创建一艘飞船
     ship=Ship(ai_settings,screen)
+
     #创建一个用于存储子弹的编组
     bullets=Group()
+
+    #创建一个用于存储外星人的编组
+    aliens=Group()
+
+    #创建外星人群
+    gf.create_fleet(ai_settings,screen,ship,aliens)
 
     #开始游戏主循环
     while True:
@@ -24,11 +32,12 @@ def run_game():
         # 控制飞船移动
         ship.update()
         bullets.update()                        #当对编组调用update（）时，编组将自动对其中的每个精灵都调用upda（）
-
-        gf.update_bullets(bullets)
+        gf.update_bullets(ai_settings,screen,ship,aliens,bullets)
+        gf.update_aliens(ai_settings,aliens)
 
         #更新屏幕上的图像，并切换到新屏幕
-        gf.update_screen(ai_settings,screen,ship,bullets)
+        gf.update_screen(ai_settings,screen,ship,bullets,aliens)
+
 
 
 

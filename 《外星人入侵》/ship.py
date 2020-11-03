@@ -37,4 +37,6 @@ class Ship():
 
     def blitme(self):
         #在指定位置绘制飞船
-        self.screen.blit(self.image,self.rect)
+        self.screen.blit(self.image,self.rect)                              #blit()方法是位块传送，即传送图片
+                                                                            #draw（）是绘制基本图形
+                                                                            #fill()是填充颜色
