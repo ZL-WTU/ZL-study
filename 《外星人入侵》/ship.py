@@ -40,3 +40,6 @@ class Ship():
         self.screen.blit(self.image,self.rect)                              #blit()方法是位块传送，即传送图片
                                                                             #draw（）是绘制基本图形
                                                                             #fill()是填充颜色
+    def center_ship(self):
+        #将飞船在屏幕上居中
+        self.center = self.screen_rect.centerx
